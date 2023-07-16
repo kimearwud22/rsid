@@ -13,12 +13,21 @@ datasource db {
 model Booking {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   nama      String
-  tlpn     String
-  alamat     String
-  sampah   String
-  date     DateTime
+  tlpn      String
+  alamat    String
+  sampah    String
+  date      DateTime
   jsampah   String
-  pesan   String
+  pesan     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model Artikel {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  judul     String
+  isi       String
+  image     String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 }

@@ -3,50 +3,38 @@ import styles from "../../styles/admin/Home.module.css";
 import styles1 from "../../styles/admin/User.module.css";
 import Router, { useRouter } from "next/router";
 import Link from 'next/dist/client/link';
-import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const PelangganList = () => {
   const [data, setData] = useState([]);
 
-  const getAllQuestion = () => {
-    axios
-      .get('/api/booking/all')
-      .then((res) => {
-        setData(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
+  //get all booking pakai fetch bukan axios
   useEffect(() => {
-    getAllQuestion();
+    const fetchData = async () => {
+      const res = await fetch('/api/booking/all');
+      const json = await res.json();
+      setData(json.data);
+    };
+    fetchData();
   }, []);
-
-  const [message, setMessage] = useState('');
   const router = useRouter();
 
-  async function deletePesan(_id) {
-    try {
-      const res = await axios.delete(`/api/booking/${_id}`);
-      console.log(res);
-      if (res.data.message) {
-        setMessage(res.data.message);
-      }
-      Swal.fire({
-        title: 'Dihapus',
-        text: 'Data Pelanggan Sudah Dihapus',
-        icon: 'error',
-        confirmButtonText: 'Oke',
-      }).then(() => {
-        getAllQuestion(); // Memperbarui daftar pelanggan setelah penghapusan berhasil
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  }
+  //delete booking
+  const deletePesan = async (id) => {
+    const res = await fetch(`/api/booking/delete?id=${id}`, {
+      method: 'DELETE',
+    });
+    const json = await res.json();
+    if (!res.ok) throw Error(json.message);
+    Swal.fire({
+      icon: 'success',
+      title: 'Berhasil',
+      text: json.message,
+    });
+    router.push('/admin/pesan');
+  };
+
+
 
   return (
     <div>
@@ -85,7 +73,7 @@ const PelangganList = () => {
                           <td>{item.jsampah}</td>
                           <td>{item.pesan}</td>
                           <td>
-                            <button className={`btn btn-danger text-center ${styles1.btn}`} onClick={() => deletePesan(item._id)}>
+                            <button className={`btn btn-danger text-center ${styles1.btn}`} onClick={() => deletePesan(item.id)}>
                               Delete
                             </button>
                           </td>
