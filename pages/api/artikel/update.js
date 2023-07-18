@@ -25,22 +25,21 @@ const upload = multer({
 //how to update product
 export default async (req, res) => {
     if (req.method === "PUT") {
-        upload.single("product_img")(req, res, async (err) => {
+        upload.single("image")(req, res, async (err) => {
             if (err) {
                 return res.status(400).json({ error: err.message });
             }
-            const {product_name, product_price, product_desc } = req.body;
-            const product_img = req.file ? `/upload/${req.file.filename}` : req.body.image;
+            const {judul,  isi } = req.body;
+            const image = req.file ? `/upload/${req.file.filename}` : req.body.image;
             const id = req.query.id;
-            const updateProduct = await prisma.product.update({
+            const updateProduct = await prisma.artikel.update({
                 where: {
-                    id: parseInt(id),
+                    id: id,
                 },
                 data: {
-                    product_name: product_name,
-                    product_price: parseInt(product_price),
-                    product_desc: product_desc,
-                    product_img: product_img,
+                    judul: judul,
+                    isi: isi,
+                    image: image,
                 },
             });
             if (updateProduct) {

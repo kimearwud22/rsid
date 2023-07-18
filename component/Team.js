@@ -78,7 +78,7 @@ const Team =()=>{
               <div className="member d-flex align-items-start">
                 <div className="pic">
                   <img
-                    src="img/doctors/doctors-2.PNG"
+                    src="img/doctors/alvif.jpg"
                     className="img-fluid"
                     alt="images"
                   />
@@ -109,7 +109,7 @@ const Team =()=>{
               <div className="member d-flex align-items-start">
                 <div className="pic">
                   <img
-                    src="img/doctors/doctors-3.PNG"
+                    src="img/doctors/pangky.jpg"
                     className="img-fluid"
                     alt="images"
                   />
@@ -202,7 +202,7 @@ const Team =()=>{
               <div className="member d-flex align-items-start">
                 <div className="pic">
                   <img
-                    src="img/doctors/doctors-4.PNG"
+                    src="img/doctors/ayin.JPG"
                     className="img-fluid"
                     alt="images"
                   />
