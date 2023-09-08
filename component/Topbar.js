@@ -11,7 +11,7 @@ function Topbar(){
               <i className="bi bi-envelope" />{' '}
               <a href="mailto:contact@example.com">rumahsampah08@gmail.com</a>
               <i className="bi bi-phone" />
-              <a href="https://wa.me/+6282141432167?text=Selamat%20Datang%20Di%20Rumah%20Sampah"> +62 821-4143-2167</a> 
+              <a href="https://wa.me/+6281559810663?text=Selamat%20Datang%20Di%20Rumah%20Sampah"> +62 821-4143-2167</a> 
             </div>
             <div className="d-none d-lg-flex social-links align-items-center">
               <a href="#" className="twitter">

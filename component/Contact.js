@@ -14,7 +14,7 @@ const Contact=()=> {
         <div>
           <iframe
             style={{ border: 0, width: '100%', height: 350 }}
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d987.1590041803219!2d114.16952912916642!3d-8.23930647236714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0d1ebbacc472601!2zOMKwMTQnMjEuNSJTIDExNMKwMTAnMTIuMyJF!5e0!3m2!1sid!2sid!4v1662673711000!5m2!1sid!2sid"
+            src="https://www.google.com/maps/place/Rumah+Sampah+ID/@-8.2393396,114.1673916,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd1535959094d73:0x6d5717fb9add6f42!8m2!3d-8.2393449!4d114.1699665!16s%2Fg%2F11vd3vflh9?authuser=0&entry=ttu"
             width={600}
             height={450}
             allowFullScreen

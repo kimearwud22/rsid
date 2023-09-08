@@ -195,7 +195,7 @@ const Form = () => {
                   <div className="text-center">
                    
                       <a
-                        href="https://wa.me/+6282141432167?text=Selamat%20Datang%20Di%20Rumah%20Sampah"
+                        href="https://wa.me/+6281559810663?text=Selamat%20Datang%20Di%20Rumah%20Sampah"
                         className="btn-get-started scrollto mt-25"
                       >
                         Pesan Lewat WA
